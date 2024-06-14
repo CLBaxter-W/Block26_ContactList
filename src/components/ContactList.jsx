@@ -1,17 +1,28 @@
 import React from "react";
+import axios from "axios";
 import ContactRow from "./ContactRow";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const dummyContacts = [
-  { id: 1, name: "R2-D2", phone: "222-222-2222", email: "r2d2@droids.com" },
-  { id: 2, name: "C-3PO", phone: "333-333-3333", email: "c3po@droids.com" },
-  { id: 3, name: "BB-8", phone: "888-888-8888", email: "bb8@droids.com" },
-];
+export default function ContactList({ setSelectedContactId }) {
+  const [contacts, setContacts] = useState(null);
 
-export default function ContactList() {
-  const [contacts, setContacts] = useState(dummyContacts);
+  useEffect(() => {
+    getAPIWithAxios();
+  }, []);
 
-  console.log(`Dummy Contacts:  ${contacts}`);
+  const getAPIWithAxios = async () => {
+    try {
+      const response = await axios.get(
+        "https://fsa-jsonplaceholder-69b5c48f1259.herokuapp.com/users"
+      );
+
+      console.log("contact list from API: ", response.data);
+
+      setContacts(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div>
@@ -28,9 +39,16 @@ export default function ContactList() {
             <td>Email</td>
             <td>Phone</td>
           </tr>
-          {contacts.map((contact) => {
-            return <ContactRow key={contact.id} newContact={contact} />;
-          })}
+          {contacts &&
+            contacts.map((contact) => {
+              return (
+                <ContactRow
+                  key={contact.id}
+                  setSelectedContactId={setSelectedContactId}
+                  newContact={contact}
+                />
+              );
+            })}
         </tbody>
       </table>
     </div>

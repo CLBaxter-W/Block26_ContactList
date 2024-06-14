@@ -24,7 +24,25 @@ $ git pull --rebase origin main
 
 \*\*\* reference: https://stackoverflow.com/questions/11188801/connect-a-local-repository-with-a-remote-repository
 
-/****************************************\*\*****************************************/
+/******************\*\*\*\*******************\*\*******************\*\*\*\*******************/
+
+--- Of Interest:
+{contacts &&
+contacts.map((contact) => {
+return <ContactRow key={contact.id} newContact={contact} />;
+})}
+
+alternative syntax
+
+{contacts?.map((contact) => {
+return <ContactRow key={contact.id} newContact={contact} />;
+})}
+
+Both do the same thing:
+
+asks if contacts doesn't exist, skip, otherwise, do it
+
+/******************\*\*\*\*******************\*\*******************\*\*\*\*******************/
 
 # React + Vite
 
