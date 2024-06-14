@@ -1,12 +1,17 @@
 import { useState } from "react";
 import "./App.css";
+import ContactList from "./components/ContactList.jsx";
 
 function App() {
+  <ContactList />;
+
   return (
     <>
-      <div>test this</div>
+      <div>
+        <ContactList />{" "}
+      </div>
     </>
   );
 }
 
-export default App
+export default App;
