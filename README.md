@@ -2,6 +2,8 @@
 
 Unit 3 Block 26 Contact List
 
+deployed website: https://tubular-macaron-901bc3.netlify.app/
+
 -- Created local git repository, with skeleton project
 
 - in terminal or project top
@@ -24,7 +26,7 @@ $ git pull --rebase origin main
 
 \*\*\* reference: https://stackoverflow.com/questions/11188801/connect-a-local-repository-with-a-remote-repository
 
-/******************\*\*\*\*******************\*\*******************\*\*\*\*******************/
+/********\*\*********\*\*\*\*********\*\*********\*\*********\*\*********\*\*\*\*********\*\*********/
 
 --- Of Interest:
 {contacts &&
@@ -42,7 +44,7 @@ Both do the same thing:
 
 asks if contacts doesn't exist, skip, otherwise, do it
 
-/******************\*\*\*\*******************\*\*******************\*\*\*\*******************/
+/********\*\*********\*\*\*\*********\*\*********\*\*********\*\*********\*\*\*\*********\*\*********/
 
 # React + Vite
 
